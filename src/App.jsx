@@ -103,8 +103,8 @@ const shuffleCards = (data) => {
   return createCards(data).sort((a, b) => 0.5 - Math.random());
 }
 
-function App() {
-  const [players, setPlayers] = useState(initialPlayers);
+const App = () => {
+  const [players] = useState(initialPlayers);
   const [pile, setPile] = useState(shuffleCards(data));
   const [cardsAreDistributed, setDistributed] = useState(false);
   
@@ -127,12 +127,10 @@ function App() {
   return (
     <div className="container text-center">
       <h1>Skyjo</h1>
-      {
-        cardsAreDistributed ?
+      {cardsAreDistributed ?
           players.map((player, i) =>
             <DisplayPlayerGame key={i} player={player} />
-          ) :
-          <button onClick={() => handleCardsPlayers()} className='btn btn-primary btn-sm'>Distribuer les cartes</button>
+          ) : <button onClick={() => handleCardsPlayers()} className='btn btn-primary btn-sm'>Distribuer les cartes</button>
       }
     </div>
   )
