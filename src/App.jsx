@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import DisplayPlayerGame from './components/DisplayPlayerGame.jsx';
+import DisplayPlayerGame from './components/DisplayPlayerGame';
+import DisplayPile from './components/DisplayPile';
 
 // cards value and quantity
 const data = [
@@ -68,8 +69,8 @@ const data = [
 
 // set default players
 const initialPlayers = [
-  { name: 'Joueur 1', score: 0, cards: [], revealedCards: [] },
-  { name: 'Joueur 2', score: 0, cards: [], revealedCards: [] }
+  { name: 'Robyn', score: 0, cards: [], revealedCards: [], isPlaying : false },
+  { name: 'Dodo', score: 0, cards: [], revealedCards: [], isPlaying : false }
 ];
 
 // class for card 
@@ -104,15 +105,12 @@ const shuffleCards = (data) => {
 }
 
 const App = () => {
-  const [players] = useState(initialPlayers);
+  const [players, setPlayers] = useState(initialPlayers);
   const [pile, setPile] = useState(shuffleCards(data));
   const [cardsAreDistributed, setDistributed] = useState(false);
-  
-  useEffect(() => {
-      console.log(pile)
-  }, [pile, setPile]);
-  
-  
+
+  useEffect(() => {}, [pile, setPile, players, setPlayers]);
+
   const handleCardsPlayers = () => {
     for (let i = 0; i < players.length; i++) {
       for (let j = 0; j < 15; j++) {
@@ -122,15 +120,35 @@ const App = () => {
       }
     }
     setDistributed(true);
+    updatePlayer();
   }
+
+  const updatePlayer = (index = 0) => {
+    const updatedPlayer = Object.assign({}, players[index]);
+    updatedPlayer.isPlaying = true;
+    const newPlayers = players.slice();
+    newPlayers[index] = updatedPlayer;
+    setPlayers(newPlayers);
+  }
+
+  const displayPile = (id) => {
+    const currentCardIndex = pile.findIndex((card) => card.id === id);
+    const updatedCard = Object.assign({}, pile[currentCardIndex]);
+    updatedCard.isVisible = true;
+    const newCards = pile.slice();
+    newCards[currentCardIndex] = updatedCard;
+    setPile(newCards);
+  };
 
   return (
     <div className="container text-center">
       <h1>Skyjo</h1>
-      {cardsAreDistributed ?
-          players.map((player, i) =>
-            <DisplayPlayerGame key={i} player={player} />
-          ) : <button onClick={() => handleCardsPlayers()} className='btn btn-primary btn-sm'>Distribuer les cartes</button>
+      {cardsAreDistributed ? <DisplayPile card={pile[0]} displayPile={displayPile} /> : ''}
+      {cardsAreDistributed ? (
+        players.map((player, i) =>
+          <DisplayPlayerGame key={i} player={player} index={i} />
+        )) : <button onClick={() => handleCardsPlayers()} className='btn btn-primary btn-sm'>Distribuer les cartes</button>
+
       }
     </div>
   )
