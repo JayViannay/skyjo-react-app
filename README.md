@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Skyjo Game
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Skyjo Game](/public/img/skyjo.jpg)
 
-## Available Scripts
+Cette application est développée en utilisant React.js et elle reproduit le jeu de cartes Skyjo.
 
-In the project directory, you can run:
+## Fonctionnalités
 
-### `npm start`
+- Distribution des cartes aux joueurs.
+- Affichage des cartes des joueurs.
+- Pioche de cartes depuis la pioche.
+- TODO : Échange de cartes entre la pioche et les cartes du joueur.
+- TODO : Affichage du score des joueurs.
+- TODO : Détection des colonnes de 3 cartes identiques pour les éliminer.
+- TODO : Décompte des points à la fin de chaque manche.
+- TODO : Fin de la partie lorsque l'un des joueurs atteint 100 points.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clonez ce dépôt GitHub sur votre machine locale :
 
-### `npm test`
+   ```shell
+   git clone git@github.com:JayViannay/skyjo-react-app.git
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Accédez au répertoire du projet :
 
-### `npm run build`
+   ```shell
+   cd skyjo-react-app
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Installez les dépendances :
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```shell
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Lancez l'application :
 
-### `npm run eject`
+   ```shell
+   npm start
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   L'application sera exécutée localement à l'adresse [http://localhost:3000](http://localhost:3000).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Utilisation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- À l'ouverture de l'application, vous verrez une interface de jeu avec les joueurs et leurs cartes.
+- Cliquez sur les boutons pour piocher une carte depuis la pile ou la pioche.
+- Échangez des cartes entre la pioche et vos cartes en cliquant sur les boutons appropriés.
+- L'application détectera automatiquement les colonnes de 3 cartes identiques et les éliminera.
+- À la fin de chaque manche, le décompte des points sera affiché.
+- La partie se termine lorsque l'un des joueurs atteint 100 points.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Contribuer
 
-## Learn More
+Les contributions sont les bienvenues ! Si vous souhaitez améliorer ou ajouter des fonctionnalités à cette application skyjo-react-app, n'hésitez pas à ouvrir une issue ou à envoyer une pull request.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Bon jeu !
