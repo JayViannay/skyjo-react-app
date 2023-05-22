@@ -143,7 +143,10 @@ const App = () => {
   return (
     <div className="container text-center">
       <h1>Skyjo</h1>
-      {cardsAreDistributed ? <DisplayPile card={pile[0]} displayPile={displayPile} /> : ''}
+      { 
+        (pile.length === 120) ? (
+        <DisplayPile cards={pile} displayPile={displayPile} />
+      ) : ''}
       {cardsAreDistributed ? (
         players.map((player, i) =>
           <DisplayPlayerGame key={i} player={player} index={i} />
